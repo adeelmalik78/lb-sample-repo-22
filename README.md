@@ -2,7 +2,7 @@
 
 This repository shows the use of Liquibase properties files and Liquibase changelog files in different directories.
 
-This is the three structure of this repo. Notice that [liquibase.properties](PropertyFiles) file is located in the PropertyFiles directory. The [changelog.xml](Changelogs) file is located in the Changelogs directory:
+This is the tree structure of this repo. Notice that `liquibase.properties` file is located in the [PropertyFiles](PropertyFiles) directory. The `changelog.xml` file is located in the [Changelogs](Changelogs) directory:
 
 ```
 .
@@ -18,7 +18,7 @@ This is the three structure of this repo. Notice that [liquibase.properties](Pro
     └── show
 ```
 
-Note that the PropertyFiles/liquibase.properties configures `changelogFile` as follows:
+Note that the [PropertyFiles/liquibase.properties](PropertyFiles/liquibase.properties) configures `changelogFile` as follows:
 ```
 changelogFile=Changelogs/changelog.xml
 ```
