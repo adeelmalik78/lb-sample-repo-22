@@ -23,14 +23,14 @@ Note that the [PropertyFiles/liquibase.properties](PropertyFiles/liquibase.prope
 changelogFile=Changelogs/changelog.xml
 ```
 
-In the current working directory ("`./`"), I could run Liquibase commands as follows:
+From the current working directory ("`./`"), I could run Liquibase commands as follows:
 ```
 liquibase \
     --defaults-file=PropertyFiles/liquibase.properties \
     status
 ```
 
-Or alternatively, I could specify an environment variable to specify defaults file and then perform the required Liquibase operation:
+Or alternatively, I could set an environment variable to specify defaults file location and then perform the required Liquibase operation:
 ```
 export LIQUIBASE_DEFAULTS_FILE=PropertyFiles/liquibase.properties
 liquibase status
