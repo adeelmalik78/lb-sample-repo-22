@@ -4,18 +4,6 @@ stages:
     - type: liquibase
       command: status
 
-  Execute-SQL:
-    actions:
-    # - type: liquibase
-    #   # if: "${LBCOMMAND} == execute-sql"
-    #   command: checks run
-    #   cmdArgs: {  checks-settings-file: "liquibase.checks-execute-sql.conf",
-    #               changelog-file: "changelog-execute-sql.xml"}
-
-    # - type: liquibase
-    #   # if: "${LBCOMMAND} == execute-sql"
-    #   command: execute-sql
-    #   cmdArgs: { sql-file: "main/show/showalldeployments.sql"}
 
   Update:
     actions:
@@ -27,5 +15,3 @@ endStage:
   actions:
   - type: liquibase
     command: history
-  # - type: liquibase
-  #   command: drop-all
