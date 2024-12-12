@@ -1,6 +1,5 @@
 globalVariables:
   GV_CHANGELOG: "Changelogs/DBATEST.xml"
-
 stages:
   Status:
     actions:
@@ -21,7 +20,7 @@ stages:
   #     # if: "${LBCOMMAND} == update"
   #     command: update
 
-endStage:
-  actions:
-  - type: liquibase
-    command: history
+# endStage:
+#   actions:
+#   - type: liquibase
+#     command: history

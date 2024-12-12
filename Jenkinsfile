@@ -34,7 +34,8 @@ pipeline {
 			}  // end steps
 		} // end stage
 
-		stage('Build') {
+
+		stage('Flow Validate') {
 			steps {
 				sh '''
 					# tag database
@@ -43,7 +44,7 @@ pipeline {
 						liquibase tag --tag=$JIRA
 						
 						# Run Liquibase flow file
-						liquibase flow --flow-file=liquibase.flowfile.yaml
+						liquibase flow validate
 					
 					else
 						echo "No JIRA was provided ... exiting!"
@@ -53,6 +54,27 @@ pipeline {
 				
 			} // end steps
 		} // end stage
+
+		stage('Flow') {
+			steps {
+				sh '''
+					# tag database
+					if [[ $JIRA != "" ]]
+					then
+						liquibase tag --tag=$JIRA
+						
+						# Run Liquibase flow file
+						liquibase flow
+					
+					else
+						echo "No JIRA was provided ... exiting!"
+					exit 1
+					fi
+				'''  
+				
+			} // end steps
+		} // end stage
+
     }  // end stages
 	
 	// post {
