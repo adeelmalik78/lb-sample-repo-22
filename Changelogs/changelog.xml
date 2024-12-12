@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
 <databaseChangeLog
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
@@ -7,17 +7,51 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
     http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd ">
 
-<!-- 
-    <includeAll path="main/100_ddl"/>
-    <includeAll path="main/200_dml"/> -->
 
-    <!-- <changeSet author="amalik" id="01" labels="Step1">
-        <sqlFile path="simple.sql" relativeToChangelogFile="true"/>
+    <includeAll path="main/100_ddl/"/>
+    <includeAll path="main/200_triggers/"/>
+
+    <!-- <include file="main/DB_Changelogs/DBATEST/EMPWR17_FA_0_S1_R3_ORA_BLD/100_01_fa_before_invalid_objs.sql" /> -->
+
+    <!-- <changeSet  author="liquibase-docs"  id="tagDatabase-example">
+        <tagDatabase  tag="version_1.3"/>
+    </changeSet>
+
+    <changeSet author="EvanLiao" id="JRN_OTHER_WTHLDG_DECN" labels="rfac_ci_202409" context="DBATEST" >
+        <sqlFile path="main/100_ddl/JRN_OTHER_WTHLDG_DECN.sql" />
         <rollback>
-            <sqlFile path="simple-rollback.sql" relativeToChangelogFile="true"/>
+            <sqlFile path="main/100_ddl/JRN_OTHER_WTHLDG_DECN_rollback.sql" />
         </rollback>
     </changeSet> -->
 
-    <includeAll path="main" />
+    <!-- <include file="main/200_triggers/204.1_4mod_other_wthldg_decn_adeel2.sql" /> -->
+
+
+    <!-- <changeSet author="EvanLiao" id="rfac_ci_202409.204.1.1" labels="rfac_ci_202409" context="DBATEST" runOnChange="true" >
+        <sqlFile 
+            path="main/200_triggers/B_D_OTHER_WTHLDG_DECN_v2.sql" 
+            endDelimiter="/"
+        />
+        <rollback>
+            <sqlFile 
+                path="main/200_triggers/B_D_OTHER_WTHLDG_DECN_v1.sql" 
+                endDelimiter="/"
+            />
+        </rollback>
+    </changeSet>
+
+    <changeSet author="EvanLiao" id="rfac_ci_202409.204.1.2" labels="rfac_ci_202409" context="DBATEST" runOnChange="true" >
+        <sqlFile 
+            path="main/200_triggers/B_U_OTHER_WTHLDG_DECN_v2.sql" 
+            endDelimiter="/"
+        />
+        <rollback>
+            <sqlFile 
+                path="main/200_triggers/B_U_OTHER_WTHLDG_DECN_v1.sql" 
+                endDelimiter="/"
+            />
+        </rollback>
+    </changeSet> -->
+
 
 </databaseChangeLog>

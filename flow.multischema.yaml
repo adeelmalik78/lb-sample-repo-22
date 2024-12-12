@@ -1,0 +1,26 @@
+stages:
+
+  ## The first stage of actions. 
+  Schema1:        
+    actions:
+      # Deploy to Schema1
+      - type: liquibase
+        command: update
+        cmdArgs: { default-schema-name: "schema1", context-filter: "schema3"  }
+
+  Schema2:
+    actions:
+      - type: liquibase
+        command: update
+        cmdArgs: { default-schema-name: "schema2", context-filter: "schema3"  }
+          
+  Schema3:
+    actions:
+      - type: liquibase
+        command: update
+        cmdArgs: { default-schema-name: "schema3", context-filter: "schema3" }
+
+endStage:
+  actions:
+  - type: liquibase
+    command: history
