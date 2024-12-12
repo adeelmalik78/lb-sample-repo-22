@@ -57,7 +57,7 @@ pipeline {
 	
 	post {
 			cleanup {  
-				archiveArtifacts '**/reports/**'
+				// archiveArtifacts '**/reports/**'
 			} // cleanup	
 	
 	} // end post
