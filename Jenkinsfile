@@ -55,11 +55,11 @@ pipeline {
 		} // end stage
     }  // end stages
 	
-	post {
-			cleanup {  
-				// archiveArtifacts '**/reports/**'
-			} // cleanup	
+	// post {
+	// 		cleanup {  
+	// 			archiveArtifacts '**/reports/**'
+	// 		} // cleanup	
 	
-	} // end post
+	// } // end post
 	
 } // end pipeline
