@@ -9,11 +9,11 @@ pipeline {
 	environment {
 		PATH="/opt/liquibase/liquibase/:$PATH"
 		DRY_RUN = "${params.DRY_RUN}"
-		LIQUIBASE_COMMAND_URL = credentials('LIQUIBASE_DEV_URL')
-		LIQUIBASE_COMMAND_USERNAME = credentials('LIQUIBASE_USER')
-		LIQUIBASE_COMMAND_PASSWORD = credentials('LIQUIBASE_PASSWORD')
+		// LIQUIBASE_COMMAND_URL = credentials('LIQUIBASE_DEV_URL')
+		// LIQUIBASE_COMMAND_USERNAME = credentials('LIQUIBASE_USER')
+		// LIQUIBASE_COMMAND_PASSWORD = credentials('LIQUIBASE_PASSWORD')
 		LIQUIBASE_LICENSE_KEY = credentials('LIQUIBASE_KEY')
-		LIQUIBASE_DEFAULTS_FILE="liquibase.linux.properties"
+		LIQUIBASE_DEFAULTS_FILE="PropertyFiles/liquibase.properties"
 		JIRA = "${params.JIRA}"
 	}
 
@@ -43,7 +43,7 @@ pipeline {
 						liquibase tag --tag=$JIRA
 						
 						# Run Liquibase flow file
-						liquibase flow --flow-file=flows/liquibase-build.flowfile.yaml
+						liquibase flow --flow-file=liquibase.flowfile.yaml
 					
 					else
 						echo "No JIRA was provided ... exiting!"
