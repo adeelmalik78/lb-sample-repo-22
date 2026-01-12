@@ -11,13 +11,13 @@
     <!-- <includeAll path="main/100_ddl/"/>
     <includeAll path="main/200_triggers/"/> -->
 
-    <changeSet author="amalik" id="v1.1" runWith="sqlplus" runAlways="true" labels="abc,123">
+    <changeSet author="amalik" id="v1.1" runAlways="true" labels="abc,123">
         <sql>
             select SYS_CONTEXT('USERENV', 'CURRENT_EDITION_NAME') AS current_edition FROM DUAL;        
         </sql>
     </changeSet>
 
-    <changeSet author="amalik" id="v2.1" runWith="sqlplus" runAlways="true" labels="dec,456">
+    <changeSet author="amalik" id="v2.1" runAlways="true" labels="dec,456">
         <sql>
             select SYS_CONTEXT('USERENV', 'CURRENT_EDITION_NAME') AS current_edition FROM DUAL;        
         </sql>
