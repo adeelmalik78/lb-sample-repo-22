@@ -1,0 +1,14 @@
+{
+  "configuration": {
+    "liquibase.reports": {},
+    "liquibase.analytics": {
+      "enabled": false
+    }
+  },
+  "liquibase.properties": {
+    "liquibase.properties": "/Users/adeelmalik/Desktop/LiquibaseHub/Dept of VA/PropertyFiles/liquibase.properties"
+  },
+  "liquibase.flowfile.yaml": {
+    "liquibase.flowfile.yaml": "/Users/adeelmalik/Desktop/LiquibaseHub/Dept of VA/liquibase.flowfile.yaml"
+  }
+}

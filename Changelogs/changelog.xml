@@ -8,8 +8,20 @@
     http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd ">
 
 
-    <includeAll path="main/100_ddl/"/>
-    <includeAll path="main/200_triggers/"/>
+    <!-- <includeAll path="main/100_ddl/"/>
+    <includeAll path="main/200_triggers/"/> -->
+
+    <changeSet author="amalik" id="v1" runWith="sqlplus" labels="abc,123">
+        <sql>
+            select SYS_CONTEXT('USERENV', 'CURRENT_EDITION_NAME') AS current_edition FROM DUAL;        
+        </sql>
+    </changeSet>
+
+    <changeSet author="amalik" id="v2" runWith="sqlplus" labels="dec,456">
+        <sql>
+            select SYS_CONTEXT('USERENV', 'CURRENT_EDITION_NAME') AS current_edition FROM DUAL;        
+        </sql>
+    </changeSet>
 
     <!-- <include file="main/DB_Changelogs/DBATEST/EMPWR17_FA_0_S1_R3_ORA_BLD/100_01_fa_before_invalid_objs.sql" /> -->
 
@@ -17,40 +29,7 @@
         <tagDatabase  tag="version_1.3"/>
     </changeSet>
 
-    <changeSet author="EvanLiao" id="JRN_OTHER_WTHLDG_DECN" labels="rfac_ci_202409" context="DBATEST" >
-        <sqlFile path="main/100_ddl/JRN_OTHER_WTHLDG_DECN.sql" />
-        <rollback>
-            <sqlFile path="main/100_ddl/JRN_OTHER_WTHLDG_DECN_rollback.sql" />
-        </rollback>
-    </changeSet> -->
 
-    <!-- <include file="main/200_triggers/204.1_4mod_other_wthldg_decn_adeel2.sql" /> -->
-
-
-    <!-- <changeSet author="EvanLiao" id="rfac_ci_202409.204.1.1" labels="rfac_ci_202409" context="DBATEST" runOnChange="true" >
-        <sqlFile 
-            path="main/200_triggers/B_D_OTHER_WTHLDG_DECN_v2.sql" 
-            endDelimiter="/"
-        />
-        <rollback>
-            <sqlFile 
-                path="main/200_triggers/B_D_OTHER_WTHLDG_DECN_v1.sql" 
-                endDelimiter="/"
-            />
-        </rollback>
-    </changeSet>
-
-    <changeSet author="EvanLiao" id="rfac_ci_202409.204.1.2" labels="rfac_ci_202409" context="DBATEST" runOnChange="true" >
-        <sqlFile 
-            path="main/200_triggers/B_U_OTHER_WTHLDG_DECN_v2.sql" 
-            endDelimiter="/"
-        />
-        <rollback>
-            <sqlFile 
-                path="main/200_triggers/B_U_OTHER_WTHLDG_DECN_v1.sql" 
-                endDelimiter="/"
-            />
-        </rollback>
     </changeSet> -->
 
 

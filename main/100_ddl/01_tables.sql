@@ -1,6 +1,8 @@
 --liquibase formatted sql
 
+--comment employees table
 --changeset adeel:employees
+--comment employees table
 create table employees (
     id int primary key,
     first_name varchar(50) not null,
