@@ -13,14 +13,14 @@
 
     <changeSet author="amalik" id="v1" runWith="sqlplus" runAlways="true" labels="abc,123">
         <sql>
-            ALTER SESSION Set EDITION = V1
+            ALTER SESSION SET EDITION = V1;
             select SYS_CONTEXT('USERENV', 'CURRENT_EDITION_NAME') AS current_edition FROM DUAL;        
         </sql>
     </changeSet>
 
     <changeSet author="amalik" id="v2" runWith="sqlplus" runAlways="true" labels="dec,456">
         <sql>
-            ALTER SESSION Set EDITION = V2
+            ALTER SESSION SET EDITION = V2;
             select SYS_CONTEXT('USERENV', 'CURRENT_EDITION_NAME') AS current_edition FROM DUAL;        
         </sql>
     </changeSet>
